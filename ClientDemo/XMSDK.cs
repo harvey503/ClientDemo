@@ -919,8 +919,10 @@ namespace ClientDemo
         public static extern Int32 H264_DVR_Login(string sDVRIP, ushort wDVRPort, string sUserName, string sPassword,
                               out H264_DVR_DEVICEINFO lpDeviceInfo, out int error, SocketStyle socketstyle);
         [DllImport("NetSdk.dll")]
-        public static extern Int32 H264_DVR_Login_Cloud(string sDVRIP, ushort wDVRPort, string sUserName, string sPassword, out H264_DVR_DEVICEINFO lpDeviceInfo,out int error,string uuid);
-
+        public static extern Int32 H264_DVR_Login_Cloud(string sDVRIP, ushort wDVRPort, string sUserName, string sPassword, out H264_DVR_DEVICEINFO lpDeviceInfo,out int error,out string uuid);
+      
+        [DllImport("NetSdk.dll")]
+        public static extern Int32 H264_DVR_LoginEx_V2(string sDVRIP, ushort wDVRPort, string sUserName, string sPassword,out H264_DVR_DEVICEINFO lpDevieInfo, int nType, out int error, int socketType);
         [DllImport("NetSdk.dll")]
         public static extern int H264_DVR_GetLastError();
 

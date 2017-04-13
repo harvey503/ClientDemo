@@ -281,7 +281,9 @@ namespace ClientDemo
                 int nError = 0;
                 //设置尝试连接设备次数和等待时间
                 int lLogin = XMSDK.H264_DVR_Login(pDev.szIpaddress, (ushort)pDev.nPort, pDev.szUserName, pDev.szPsw, out OutDev, out nError, SocketStyle.TCPSOCKET);
-                lLogin = XMSDK.H264_DVR_Login_Cloud(pDev.szIpaddress, (ushort)pDev.nPort, pDev.szUserName, pDev.szPsw, out OutDev, out nError, "SPL20160928-12");
+                string uuid = "44a8c1b13d6b4ae6bdb7f7b6982232b2";
+                lLogin = XMSDK.H264_DVR_Login_Cloud(pDev.szIpaddress, (ushort)pDev.nPort, pDev.szUserName, pDev.szPsw, out OutDev, out nError, out uuid);
+                //lLogin = XMSDK.H264_DVR_LoginEx_V2(pDev.szIpaddress, (ushort)pDev.nPort, pDev.szUserName, pDev.szPsw, out OutDev, 1, out nError, 1);
                 if (lLogin <= 0)
                 {
 
@@ -544,12 +546,9 @@ namespace ClientDemo
             DEV_INFO devInfo = new DEV_INFO();
             devInfo.nPort = 34567;
             devInfo.lLoginID = -1;
-            //devInfo.szIpaddress = "192.168.1.10";//"SPL2160928-12 TXD0476 NBD7004T-P";
-            //devInfo.szUserName = "admin";//"2316305603@qq.com";
-            //devInfo.szPsw = "";//"123456xx"
-            devInfo.szIpaddress = "SPL2160928-12 TXD0476 NBD7004T-P";//"SPL2160928-12 TXD0476 NBD7004T-P";
-            devInfo.szUserName = "admin";//"2316305603@qq.com";
-            devInfo.szPsw = "";//"123456xx"
+            devInfo.szIpaddress = "d54126364d7c245d";
+            devInfo.szUserName = "admin";
+            devInfo.szPsw = "";
             Connect(ref devInfo, 0, 0);
         }
     }
