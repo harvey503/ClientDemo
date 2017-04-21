@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using System.Runtime.InteropServices;
-namespace ClientDemo
+namespace NvrVideoPlayer
 {
     public partial class AddDevForm : Form
     {

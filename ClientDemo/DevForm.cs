@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Xml;
-namespace ClientDemo
+namespace NvrVideoPlayer
 {
      
     public partial class DevForm : UserControl

@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-namespace ClientDemo
+namespace NvrVideoPlayer
 {
     public partial class Form_Transpanrent : Form
     {

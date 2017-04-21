@@ -903,7 +903,7 @@ namespace NvrVideoPlayer
         public delegate int fRealDataCallBack_V2(int lRealHandle,ref PACKET_INFO_EX pFrame, int dwUser);
         public delegate int fRealDataCallBack(int lRealHandle, int dwDataType, string strBuf,int lbufsize,int dwUser);
 
-        [DllImport("NetSdk.dll")]
+        [DllImport(@"NetSdk.dll")]
         public static extern void H264_DVR_SetDVRMessCallBack(fMessCallBack cbAlarmcallback, IntPtr lUser);
         [DllImport("NetSdk.dll")]
         public static extern int H264_DVR_Set_UUid(out string uuid);

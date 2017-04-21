@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.IO;
 using System.Threading;
-namespace ClientDemo
+namespace NvrVideoPlayer
 {
     public class ComboxItem
     {

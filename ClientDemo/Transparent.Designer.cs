@@ -1,4 +1,4 @@
-﻿namespace ClientDemo
+﻿namespace NvrVideoPlayer
 {
     partial class Form_Transpanrent
     {

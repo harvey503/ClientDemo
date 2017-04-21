@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Threading;
-namespace ClientDemo
+namespace NvrVideoPlayer
 {
     public partial class ClientDemo : Form
     {
@@ -99,6 +99,8 @@ namespace ClientDemo
             //initialize
             disCallback = new XMSDK.fDisConnect(DisConnectBackCallFunc);
             GC.KeepAlive(disCallback);
+            string uuid = "0460KMYTDZJS01704183063916250081";
+            int uuidResult = XMSDK.H264_DVR_Set_UUid(out uuid);
             int bResult = XMSDK.H264_DVR_Init(disCallback, this.Handle);
 
             //he messages received in SDK from DVR which need to upload， such as alarm information，diary information，may do through callback function
@@ -280,9 +282,8 @@ namespace ClientDemo
                 H264_DVR_DEVICEINFO OutDev;
                 int nError = 0;
                 //设置尝试连接设备次数和等待时间
-                int lLogin = XMSDK.H264_DVR_Login(pDev.szIpaddress, (ushort)pDev.nPort, pDev.szUserName, pDev.szPsw, out OutDev, out nError, SocketStyle.TCPSOCKET);
-                string uuid = "44a8c1b13d6b4ae6bdb7f7b6982232b2";
-                lLogin = XMSDK.H264_DVR_Login_Cloud(pDev.szIpaddress, (ushort)pDev.nPort, pDev.szUserName, pDev.szPsw, out OutDev, out nError, out uuid);
+                //int lLogin = XMSDK.H264_DVR_Login(pDev.szIpaddress, (ushort)pDev.nPort, pDev.szUserName, pDev.szPsw, out OutDev, out nError, SocketStyle.TCPSOCKET);
+                int lLogin = XMSDK.H264_DVR_Login_Cloud(pDev.szIpaddress, (ushort)pDev.nPort, pDev.szUserName, pDev.szPsw, out OutDev, out nError, null);
                 //lLogin = XMSDK.H264_DVR_LoginEx_V2(pDev.szIpaddress, (ushort)pDev.nPort, pDev.szUserName, pDev.szPsw, out OutDev, 1, out nError, 1);
                 if (lLogin <= 0)
                 {
@@ -544,9 +545,9 @@ namespace ClientDemo
         private void btnOpenVideo_Click(object sender, EventArgs e)
         {
             DEV_INFO devInfo = new DEV_INFO();
-            devInfo.nPort = 34567;
+            devInfo.nPort = 34567;//
             devInfo.lLoginID = -1;
-            devInfo.szIpaddress = "d54126364d7c245d";
+            devInfo.szIpaddress = "d54126364d7c245d";//
             devInfo.szUserName = "admin";
             devInfo.szPsw = "";
             Connect(ref devInfo, 0, 0);

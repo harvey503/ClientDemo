@@ -103,9 +103,7 @@
     <Compile Include="DevForm.Designer.cs">
       <DependentUpon>DevForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PlayBackForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="PlayBackForm.cs" />
     <Compile Include="PlayBackForm.Designer.cs">
       <DependentUpon>PlayBackForm.cs</DependentUpon>
     </Compile>
